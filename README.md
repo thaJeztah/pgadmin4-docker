@@ -17,8 +17,8 @@ $ docker run -d -e POSTGRES_PASSWORD=password --net pg --name postgres postgres
 $ docker run -d -p 8080:80 --name pgadmin --net pg thajeztah/pgadmin4
 ```
 
-Now visit http://[your-docker-host]:8080 in your browser. You can add the
-postgres container (password is `password`).
+Now visit `http://[your-docker-host]:8080` in your browser. You can add the
+postgres database (password is `password`) to test if everything is working.
 
 
 ## To-dos

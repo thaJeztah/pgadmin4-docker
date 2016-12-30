@@ -20,6 +20,27 @@ $ docker run -d -p 8080:80 --name pgadmin --net pg thajeztah/pgadmin4
 Now visit `http://[your-docker-host]:8080` in your browser. You can add the
 postgres database (password is `password`) to test if everything is working.
 
+## Persistent data
+
+Persistent data is stored in a volume, located at `/pgadmin/`. This allows
+you to upgrade the container to a new version without losing configuration.
+
+The following directories can be found inside the volume;
+
+- `/pgadmin/config/pgadmin4.db` - SQLite configuration database
+- `/pgadmin/storage/` - other storage
+
+You can override the storage location by setting the `PG_ADMIN_DATA_DIR`
+environment variable
+
+## Run the image with a read-only filesystem
+
+This image can be run with a read-only filesystem. To do so, specify the
+`--read-only` flag when starting the container.
+
+```bash
+$ docker run -d -p 8080:80 --name pgadmin --read-only thajeztah/pgadmin4
+```
 
 ## Runtime configuration
 

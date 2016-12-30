@@ -12,18 +12,19 @@
 ##########################################################################
 
 import os
+from distutils.util import strtobool
 from logging import *
 
 # Data directory for storage of config settings etc. This shouldn't normally
 # need to be changed - it's here as various other settings depend on it.
-DATA_DIR = '/pgadmin/'
+DATA_DIR = os.getenv('PG_ADMIN_DATA_DIR', '/pgadmin/')
 
 
 ##########################################################################
 # Log settings
 ##########################################################################
 
-DEBUG = False
+DEBUG = strtobool(os.getenv('DEBUG', "False"))
 
 # Log to stdout so that logging is handled by Docker logging drivers
 LOG_FILE = '/dev/stdout'
@@ -35,7 +36,7 @@ LOG_FILE = '/dev/stdout'
 SERVER_MODE = False
 
 DEFAULT_SERVER = '0.0.0.0'
-DEFAULT_SERVER_PORT = 80
+DEFAULT_SERVER_PORT = int(os.getenv('PG_ADMIN_PORT', 80))
 
 
 ##########################################################################

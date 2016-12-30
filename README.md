@@ -10,6 +10,25 @@ is disabled).
 
 ## Example use
 
+### Quick start
+
+To see this image in action, run the following command;
+
+```bash
+$ docker run --rm -p 5050:5050 thajeztah/pgadmin4
+```
+
+This starts a one-off container in non-detached mode, and container logs are
+printed in your terminal. After the container has finished starting, visit
+`http://[your-docker-host]:5050` in your browser to try pgAdmin 4.
+
+To exit and remove the container, press `CTRL+C` in your terminal.
+
+
+### Practical example
+
+This example uses a custom network, and runs a PostgreSQL container.
+
 ```bash
 # create a custom network for easier connecting
 $ docker network create pg
@@ -22,7 +41,10 @@ $ docker run -d -p 5050:5050 --name pgadmin --net pg thajeztah/pgadmin4
 ```
 
 Now visit `http://[your-docker-host]:5050` in your browser. You can add the
-postgres database (password is `password`) to test if everything is working.
+postgres database (hostname is `postgres`, password is `password`) to test
+if everything is working.
+
+![screenshot](https://raw.githubusercontent.com/thaJeztah/pgadmin4-docker/master/pgadmin-screenshot.png)
 
 ## Persistent data
 

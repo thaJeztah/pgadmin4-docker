@@ -36,7 +36,7 @@ LOG_FILE = '/dev/stdout'
 SERVER_MODE = False
 
 DEFAULT_SERVER = '0.0.0.0'
-DEFAULT_SERVER_PORT = int(os.getenv('PG_ADMIN_PORT', 80))
+DEFAULT_SERVER_PORT = int(os.getenv('PG_ADMIN_PORT', 5050))
 
 
 ##########################################################################

@@ -1,6 +1,6 @@
 FROM python:2-alpine
 
-ENV PGADMIN_VERSION=1.1 \
+ENV PGADMIN_VERSION=1.2 \
     PYTHONDONTWRITEBYTECODE=1
 
 RUN apk add --no-cache alpine-sdk postgresql-dev \

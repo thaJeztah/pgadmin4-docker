@@ -93,3 +93,8 @@ More information on pgAdmin 4 development can be found here;
 
 - https://git.postgresql.org/gitweb/?p=pgadmin4.git;a=summary
 - https://www.pgadmin.org
+
+## Reporting issues and feature requests
+
+Issues and feature requests can be reported on GitHub;
+https://github.com/thaJeztah/pgadmin4-docker

@@ -1,12 +1,12 @@
 # pgAdmin 4
 
-This is a simple Docker image for running pgAdmin 4 in a container. It is not 
-intended for production use (it runs in "desktop mode", so authentication
-is disabled).
+This is a simple Docker image for running pgAdmin 4 in a container. The default
+configuration is not intended for production use (it runs in "desktop mode",
+so authentication is disabled).
 
-> **IMPORTANT**: As of version 1.0, this image uses an unprivileged user, and
-> uses port `5050` instead of `80`. To access the web-interface on port `80`,
-> use port-mapping; `-p 80:5050`.
+This image uses an unprivileged user, and uses port `5050` instead of `80`.
+To access the web-interface on port `80` instead of `5050`, you can map the
+port using `-p 80:5050`.
 
 ## Example use
 
@@ -56,7 +56,7 @@ The following directories can be found inside the volume;
 - `/pgadmin/config/pgadmin4.db` - SQLite configuration database
 - `/pgadmin/storage/` - other storage
 
-You can override the storage location by setting the `PG_ADMIN_DATA_DIR`
+You can override the storage location using the `PG_ADMIN_DATA_DIR`
 environment variable
 
 ## Unprivileged user

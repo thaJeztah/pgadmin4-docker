@@ -46,6 +46,39 @@ if everything is working.
 
 ![screenshot](https://raw.githubusercontent.com/thaJeztah/pgadmin4-docker/master/pgadmin-screenshot.png)
 
+### Connect to a host running PostgreSQL
+
+To connect pgadmin4 with a database running in a host you have to modify two files in the host, pg-hba.conf and postgresql.conf
+
+Open the pg-hba.conf
+```bash
+#change 9.x to your PostgreSQL version
+$ sudo vim /etc/postgresql/9.x/main/pg_hba.conf
+```
+
+And add the line
+```conf
+host    all             all             0.0.0.0/0               trust
+```
+
+`0.0.0.0/0` means any host is allowed to connect, that can be replaced by the your container ip address
+
+Open the postgresql.conf  changing 9.x to your postgres version.
+
+```bash
+#change 9.x to your PostgreSQL version
+$ sudo vim /etc/postgresql/9.x/main/postgresql.conf
+```
+
+And add the line
+
+```conf
+listen_addresses = '*'
+```
+`'*'` means your host is listening all ip address. Again, you can replace by your container ip address
+
+Now just discover your local ip using `ifconfig`, and put it in the `hostname/address` field, when create a new server in pgadmin4, to connect the database host.
+
 ## Persistent data
 
 Persistent data is stored in a volume, located at `/pgadmin/`. This allows

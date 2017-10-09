@@ -1,6 +1,6 @@
 FROM python:2-alpine3.6
 
-ENV PGADMIN_VERSION=1.6 \
+ENV PGADMIN_VERSION=2.0 \
     PYTHONDONTWRITEBYTECODE=1
 
 # Install postgresql tools for backup/restore

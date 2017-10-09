@@ -66,3 +66,23 @@ UPGRADE_CHECK_ENABLED = False
 # STORAGE_DIR = "/path/to/directory/"
 ##########################################################################
 STORAGE_DIR = os.path.join(DATA_DIR, 'storage')
+
+##########################################################################
+# Default locations for binary utilities (pg_dump, pg_restore etc)
+#
+# These are intentionally left empty in the main config file, but are
+# expected to be overridden by packagers in config_distro.py.
+#
+# A default location can be specified for each database driver ID, in
+# a dictionary. Either an absolute or relative path can be specified.
+# In cases where it may be difficult to know what the working directory
+# is, "$DIR" can be specified. This will be replaced with the path to the
+# top-level pgAdmin4.py file. For example, on macOS we might use:
+#
+# $DIR/../../SharedSupport
+#
+##########################################################################
+DEFAULT_BINARY_PATHS = {
+    "pg":   "/usr/local/bin",
+    "ppas": "/usr/local/bin"
+}

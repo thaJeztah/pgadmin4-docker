@@ -3,6 +3,11 @@ FROM python:2-alpine3.6
 ENV PGADMIN_VERSION=1.6 \
     PYTHONDONTWRITEBYTECODE=1
 
+# Install postgresql tools for backup/restore
+RUN apk add --no-cache postgresql \
+ && cp /usr/bin/psql /usr/bin/pg_dump /usr/bin/pg_dumpall /usr/bin/pg_restore /usr/local/bin/ \
+ && apk del postgresql
+
 RUN apk add --no-cache alpine-sdk postgresql-dev \
  && pip install --upgrade pip \
  && echo "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${PGADMIN_VERSION}/pip/pgadmin4-${PGADMIN_VERSION}-py2.py3-none-any.whl" | pip install --no-cache-dir -r /dev/stdin \

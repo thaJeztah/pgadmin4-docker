@@ -14,7 +14,7 @@ RUN apk add --no-cache alpine-sdk postgresql-dev \
 
 EXPOSE 5050
 
-COPY LICENSE config_local.py /usr/local/lib/python2.7/site-packages/pgadmin4/
+COPY LICENSE config_distro.py /usr/local/lib/python2.7/site-packages/pgadmin4/
 
 USER pgadmin:pgadmin
 CMD ["python", "./usr/local/lib/python2.7/site-packages/pgadmin4/pgAdmin4.py"]

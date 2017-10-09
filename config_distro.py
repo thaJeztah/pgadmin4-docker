@@ -84,5 +84,6 @@ STORAGE_DIR = os.path.join(DATA_DIR, 'storage')
 ##########################################################################
 DEFAULT_BINARY_PATHS = {
     "pg":   "/usr/local/bin",
-    "ppas": "/usr/local/bin"
+    "ppas": "/usr/local/bin",
+    "gpdb": "/usr/local/bin"
 }

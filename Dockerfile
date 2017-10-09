@@ -4,9 +4,8 @@ ENV PGADMIN_VERSION=1.6 \
     PYTHONDONTWRITEBYTECODE=1
 
 RUN apk add --no-cache alpine-sdk postgresql-dev \
- && echo "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${PGADMIN_VERSION}/pip/pgadmin4-${PGADMIN_VERSION}-py2.py3-none-any.whl" > requirements.txt \
  && pip install --upgrade pip \
- && pip install --no-cache-dir -r requirements.txt \
+ && echo "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${PGADMIN_VERSION}/pip/pgadmin4-${PGADMIN_VERSION}-py2.py3-none-any.whl" | pip install --no-cache-dir -r /dev/stdin \
  && apk del alpine-sdk \
  && addgroup -g 50 -S pgadmin \
  && adduser -D -S -h /pgadmin -s /sbin/nologin -u 1000 -G pgadmin pgadmin \

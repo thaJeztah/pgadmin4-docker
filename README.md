@@ -87,6 +87,7 @@ This image can be configured at runtime, by setting environment variables;
 
 - `PG_ADMIN_DATA_DIR` directory to use for storing data (defaults to `/pgadmin/`)
 - `PG_ADMIN_PORT` port to listen on (defaults to `5050`)
+- `PG_ADMIN_SESSION_DIR` directory to use for storing server-side sessions (defaults to `/dev/shm/pgAdmin4_session`)
 - `DEBUG` enable debug mode (detaults to `False`)
 
 More information on pgAdmin 4 development can be found here;

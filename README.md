@@ -89,6 +89,7 @@ This image can be configured at runtime, by setting environment variables;
 - `PG_ADMIN_PORT` port to listen on (defaults to `5050`)
 - `PG_ADMIN_SESSION_DIR` directory to use for storing server-side sessions (defaults to `/dev/shm/pgAdmin4_session`)
 - `DEBUG` enable debug mode (detaults to `False`)
+- `SERVER_MODE` enable server mode (detaults to `False` - docker run -d -p 5050:5050 -e PGADMIN_SETUP_EMAIL=pgadmin4@pgadmin.org -e PGADMIN_SETUP_PASSWORD=admin -e SERVER_MODE=true thajeztah/pgadmin4)
 
 More information on pgAdmin 4 development can be found here;
 

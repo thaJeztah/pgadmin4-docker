@@ -34,7 +34,7 @@ This example uses a custom network, and runs a PostgreSQL container.
 $ docker network create pg
 
 # start a postgres container
-$ docker run -d -e POSTGRES_PASSWORD=password --network=pg --name postgres postgres
+$ docker run -d -e POSTGRES_PASSWORD=password --network=pg --name postgres postgres:9-alpine
 
 # start pgAdmin container
 $ docker run -d -p 5050:5050 --name pgadmin --network=pg thajeztah/pgadmin4

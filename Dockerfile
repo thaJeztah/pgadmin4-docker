@@ -1,4 +1,4 @@
-FROM python:2-alpine3.7
+FROM python:2-alpine3.8
 
 ENV PGADMIN_VERSION=3.1 \
     PYTHONDONTWRITEBYTECODE=1

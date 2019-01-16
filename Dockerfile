@@ -4,7 +4,7 @@ ENV PGADMIN_VERSION=3.1 \
     PYTHONDONTWRITEBYTECODE=1
 
 # Install postgresql tools for backup/restore
-RUN apk add --no-cache postgresql \
+RUN apk add --no-cache libedit postgresql \
  && cp /usr/bin/psql /usr/bin/pg_dump /usr/bin/pg_dumpall /usr/bin/pg_restore /usr/local/bin/ \
  && apk del postgresql
 

@@ -34,10 +34,10 @@ This example uses a custom network, and runs a PostgreSQL container.
 $ docker network create pg
 
 # start a postgres container
-$ docker run -d -e POSTGRES_PASSWORD=password --net pg --name postgres postgres
+$ docker run -d -e POSTGRES_PASSWORD=password --network=pg --name postgres postgres
 
 # start pgAdmin container
-$ docker run -d -p 5050:5050 --name pgadmin --net pg thajeztah/pgadmin4
+$ docker run -d -p 5050:5050 --name pgadmin --network=pg thajeztah/pgadmin4
 ```
 
 Now visit `http://[your-docker-host]:5050` in your browser. You can add the

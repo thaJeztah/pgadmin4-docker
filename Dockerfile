@@ -13,7 +13,7 @@ RUN apk add --no-cache libedit postgresql \
 
 RUN apk add --no-cache postgresql-dev libffi-dev
 
-ENV PGADMIN_VERSION=3.3
+ENV PGADMIN_VERSION=3.4
 ENV PYTHONDONTWRITEBYTECODE=1
 
 RUN apk add --no-cache alpine-sdk \
